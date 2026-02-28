@@ -242,8 +242,8 @@ static void TestIsPoisonedNearMemEnd(uptr end) {
       uptr first_poisoned = __asan_region_is_poisoned(first, size);
       EXPECT_TRUE(first_poisoned == 0 ||
                   (first_poisoned >= first && first_poisoned <= last))
-                  << " first=" << (void*)first << " size=" << size
-                  << " first_poisoned=" << (void*)first_poisoned;
+          << " first=" << (void*)first << " size=" << size
+          << " first_poisoned=" << (void*)first_poisoned;
 
       // __asan_region_is_poisoned() and __asan_address_is_poisoned() should
       // behave consistently, i.e. both should return the same result.
